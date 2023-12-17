@@ -1,3 +1,3 @@
-./StudioTable/migrations/
-./db.sqlite3
-./StudioTable/__pycache__/
+StudioTable/migrations/
+db.sqlite3
+StudioTable/__pycache__/
