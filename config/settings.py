@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'fmf2024.apps.FMF2024Config' #追加
+    'StudioTable.apps.FMF2024Config' #追加
 ]
 
 MIDDLEWARE = [

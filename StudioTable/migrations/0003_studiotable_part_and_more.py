@@ -6,7 +6,7 @@ from django.db import migrations, models
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('fmf2024', '0002_studiotable_modified_and_more'),
+        ('StudioTable', '0002_studiotable_modified_and_more'),
     ]
 
     operations = [
