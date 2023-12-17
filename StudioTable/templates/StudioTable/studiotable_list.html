@@ -1,0 +1,15 @@
+<h1>スタジオ予約状況</h1>
+<table>
+    <tbody>
+    {% for reserve in reserves %}
+    <tr>
+        <td>{{ reserve.name}}</td>
+        <td>{{ reserve.part }}</td>
+        <td>{{ reserve.band_or_individual }}</td>
+        <td>{{ reserve.date }}</td>
+        <td>{{ reserve.modified }}</td>
+        <td>{{ reserve.period }}</td>
+    </tr>
+    {% endfor %}
+    </tbody>
+</table>
