@@ -13,7 +13,7 @@
         <td>{{ reserve.reserve.name }}</td>
         <td>{{ reserve.period }}</td>
         <td>{{ reserve.date }}</td>
-        <td><a href="{% url 'detail' reserve_detail.pk %}">詳細</a></td>
+        <td><a href="{% url 'detail' reserve.pk %}">詳細</a></td>
     </tr>
     {% endfor %}
     </tbody>

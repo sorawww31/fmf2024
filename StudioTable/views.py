@@ -9,4 +9,4 @@ class TableList(ListView):
 
 class TableDetail(DetailView):
     model = StudioTable
-    context_object_name = "reserve_detail"
+    context_object_name = "reserve"
