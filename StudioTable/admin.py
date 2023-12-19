@@ -9,7 +9,6 @@ admin.site.register(ReserveTable)
 @admin.register(StudioTable)
 class StudioTableAdmin(admin.ModelAdmin):
     actions = ['create_weekly_schedule']
-    date_offset = datetime.date.today()
     def create_weekly_schedule(self, request, queryset):
         date_offset = queryset[0].date
         print(f"{date_offset}")
