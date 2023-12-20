@@ -3,12 +3,13 @@ from django.db import models
 # Create your models here.
 
 class ReserveTable(models.Model):
-    name = models.CharField(max_length = 15, verbose_name = '予約者氏名')
-    part = models.CharField(default = '',max_length=5, choices = (('Vo','Vo'), ('Gt','Gt'), ('Ba','Ba'), ('Fr','Dr'), ('Key', 'Key'), ('その他','その他')), verbose_name = '予約者のパート')
-    band_or_individual = models.CharField(default = '',max_length = 5, choices = (('バンド練習', 'バンド練習'),('個人練習', '個人練習')), verbose_name = '個人練習orバンド練習')
+    name = models.CharField(max_length = 15, verbose_name = '予約名')
+
+    part_band = models.CharField(default = '',max_length=5, choices = (('バンド練習','バンド練習'),('Vo','Vo'), ('Gt','Gt'), ('Ba','Ba'), ('Fr','Dr'), ('Key', 'Key'), ('その他','その他')), verbose_name = '予約者のパートorバンド練習')
+
     modified = models.DateTimeField(auto_now = True, verbose_name = '予約完了した時刻')
     def __str__(self):
-        return self.name
+        return f"{self.part_band}/{self.name}"
 class StudioTable(models.Model):
     reserve = models.OneToOneField(ReserveTable, on_delete=models.CASCADE, verbose_name = '予約情報', null = True, blank = True)
 
@@ -16,7 +17,7 @@ class StudioTable(models.Model):
     date = models.DateField(verbose_name = '予約日', null = True)
     
     def __str__(self):
-        return f"{self.date}({self.period})"
+        return f"{self.date}({self.period}) {self.reserve}"
     
     class Meta:
         constraints = [
