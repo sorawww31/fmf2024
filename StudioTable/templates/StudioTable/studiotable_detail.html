@@ -1,7 +1,7 @@
-<h1>詳細情報</h1>
-<div>
-    <h2>{{ reserve.reserve.name }}</h2>
-    <p>{{ reserve.reserve.part }}</p>
-    <p>{{ reserve.date }}</p>
-    <p>{{ reserve.period }}</p>
-</div>
+{% for reserve in mondays %}
+        <tr>
+            <td>{{ reserve.date }} から </td>
+            <td><a href="{%url 'table' reserve.pk %}">予約テーブル</a></td>
+            <td><a href="{% url 'detail' reserve.pk %}">詳細</a></td>
+        </tr>
+{% endfor %}

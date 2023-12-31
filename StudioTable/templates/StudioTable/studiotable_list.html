@@ -1,21 +1,14 @@
 <h1>スタジオ予約フォーム</h1>
 <p><a href="{% url 'create' %}">新規作成</a></p>
 <table>
-    <thead>
-        <tr>
-        <th scope="col">名前</th>
-        <th scope="col">時限</th>
-        <th scope="col">日付</th>
-        </tr>
-    </thead>
     <tbody>
-    {% for reserve in reserves %}
-    <tr>
-        <td>{{ reserve.reserve.name }}</td>
-        <td>{{ reserve.period }}</td>
-        <td>{{ reserve.date }}</td>
-        <td><a href="{% url 'detail' reserve.pk %}">詳細</a></td>
-    </tr>
-    {% endfor %}
+        {% for reserve in mondays %}
+        <tr>
+            <td>{{ reserve.date }} から </td>
+            <td><a href="{%url 'table'%}">予約テーブル</a></td>
+            <td><a href="{% url 'detail' reserve.pk %}">詳細</a></td>
+        </tr>
+        {% endfor %}
     </tbody>
+
 </table>

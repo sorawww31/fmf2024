@@ -1,8 +1,9 @@
 from django.urls import path
-from .views import TableList, ReserveCreate, TableDetail
+from .views import TableList, ReserveCreate, TableDetail, WeekList
 
 urlpatterns = [
-    path("", TableList.as_view(), name="list"),
+    path("", WeekList.as_view(), name="week"),
+    path("table/<int:pk>", TableList.as_view() , name = "table"),
     path("detail/<int:pk>", TableDetail.as_view(), name="detail"),
-    path("create/", ReserveCreate.as_view(), name="create")
+    path("create/", ReserveCreate.as_view(), name="create"),
 ]
