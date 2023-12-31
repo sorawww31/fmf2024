@@ -1,4 +1,4 @@
-StudioTable/migrations/
+StudioTable/migrations/*
 !StudioTable/migrations/__init__.py
 db.sqlite3
-StudioTable/__pycache__/
+StudioTable/__pycache__/*
